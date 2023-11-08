@@ -1,6 +1,3 @@
-import ToDoForm from './ToDoForm';
-import ToDoList from './ToDoList';
-
 /**
  * My To Do List App
  *
@@ -9,6 +6,8 @@ import ToDoList from './ToDoList';
 
 import React from 'react';
 import {SafeAreaView} from 'react-native';
+import ToDoForm from './ToDoForm';
+import ToDoList from './ToDoList';
 
 function App() {
   return (
