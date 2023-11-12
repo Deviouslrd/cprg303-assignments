@@ -4,13 +4,15 @@ import {ScrollView, Pressable, StyleSheet, Text, View} from 'react-native';
 function ToDoList({tasks}) {
   return (
     <ScrollView>
-      {tasks.map(task => (
-        <Pressable>
-          <View styles={styles.task}>
-            <Text styles={styles.taskText}>{task}</Text>
-          </View>
-        </Pressable>
-      ))}
+      {tasks.map(task => {
+        return (
+          <Pressable key={task}>
+            <View styles={styles.task}>
+              <Text styles={styles.taskText}>{task}</Text>
+            </View>
+          </Pressable>
+        );
+      })}
     </ScrollView>
   );
 }
