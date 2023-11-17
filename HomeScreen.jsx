@@ -1,5 +1,5 @@
 /**
- * My To Do List App
+ * Home screen
  *
  * @format
  */
@@ -9,10 +9,6 @@ import {SafeAreaView} from 'react-native';
 import ToDoForm from './ToDoForm';
 import ToDoList from './ToDoList';
 import {useState} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-
-const Stack = createStackNavigator();
 
 function App() {
   const [taskList, setTaskList] = useState([
@@ -26,16 +22,10 @@ function App() {
   };
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="About" component={AboutScreen} />
-      </Stack.Navigator>
       <SafeAreaView>
         <ToDoList tasks={taskList} />
         <ToDoForm addTask={addTask} />
       </SafeAreaView>
-    </NavigationContainer>
   );
 }
 
