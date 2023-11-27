@@ -5,12 +5,13 @@
  */
 
 import React from 'react';
-import {SafeAreaView} from 'react-native';
-import ToDoForm from './ToDoForm';
-import ToDoList from './ToDoList';
+import {SafeAreaView, Button} from 'react-native';
+import ToDoForm from '../components/ToDoForm';
+import ToDoList from '../components/ToDoList';
 import {useState} from 'react';
+import MainLayout from '../layouts/MainLayout';
 
-function App() {
+function HomeScreen({navigation}) {
   const [taskList, setTaskList] = useState([
     'Do laundry',
     'Go to gym',
@@ -22,11 +23,17 @@ function App() {
   };
 
   return (
+    <MainLayout>
       <SafeAreaView>
+        <Button
+          title="Go to About"
+          onPress={() => navigation.navigate('About')}
+        />
         <ToDoList tasks={taskList} />
         <ToDoForm addTask={addTask} />
       </SafeAreaView>
+    </MainLayout>
   );
 }
 
-export default App;
+export default HomeScreen;

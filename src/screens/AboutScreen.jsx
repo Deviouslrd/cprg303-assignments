@@ -1,13 +1,20 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, Button} from 'react-native';
+import MainLayout from '../layouts/MainLayout';
 
-function About({tasks}) {
+function AboutScreen({navigation}) {
   return (
-    <SafeAreaView>
-      <Text styles={styles.task}>To Do List</Text>
-      <Text styles={styles.task}>Connor deHaas</Text>
-      <Text styles={styles.task}>November 17, 2023</Text>
-    </SafeAreaView>
+    <MainLayout>
+      <Button
+        title="Go to Home"
+        onPress={() => navigation.navigate('Home')}
+      />
+      <SafeAreaView>
+        <Text styles={styles.task}>To Do List</Text>
+        <Text styles={styles.task}>Connor deHaas</Text>
+        <Text styles={styles.task}>November 17, 2023</Text>
+      </SafeAreaView>
+    </MainLayout>
   );
 }
 
@@ -40,4 +47,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ToDoList;
+export default AboutScreen;
